@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import TempNavBar from '@/components/TempNavBar.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <TempNavBar />
+    <h1>Hello app!</h1>
   </main>
 </template>
+
