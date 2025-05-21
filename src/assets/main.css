@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
 body{
+  padding: 0;
   margin: 0;
   font-family: 'Press Start 2p', monospace ;
   background-color: #000;

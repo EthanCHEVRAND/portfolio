@@ -5,5 +5,14 @@ import router from './router';
 </script>
 
 <template>
-  <router-view />
+  <arcade-shell />
 </template>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', monospace;
+  background: radial-gradient(circle at center, #111, #000);
+  color: #00ffcc;
+}
+</style>
