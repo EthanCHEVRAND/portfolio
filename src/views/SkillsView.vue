@@ -1,12 +1,10 @@
 <script setup>
 import TempNavBar from '@/components/TempNavBar.vue';
-import ProjectCard from '@/components/ProjectCard.vue' ;
 </script>
 
 <template>
     <main>
         <TempNavBar />
-        <div class="projects">Hello projects</div>
-        <ProjectCard />
+        <div class="projects">Hello skills</div>
     </main>
 </template>
