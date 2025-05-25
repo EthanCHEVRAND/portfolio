@@ -40,5 +40,6 @@ h1 {
   margin-right: 20px ;
   outline: 2px solid #ffba66;
   border-radius: 6px;
+  text-align: justify ;
 }
 </style>

@@ -152,6 +152,7 @@ onMounted(() => {
     0 0 16px #ff6a00cc,
     0 0 10px #000a;
   overflow: hidden;
+  padding: 10px ;
 }
 
 .snow-canvas {
@@ -189,10 +190,10 @@ onMounted(() => {
   font-family: 'Share Tech Mono', 'VT323', 'Press Start 2P', monospace, sans-serif;
   color: #ffe066;
   text-shadow:
-    0 0 8px #ff2d55,
-    0 0 4px #ff6a00,
+    0 0 4px #ff2d55,
+    0 0 3px #ff6a00,
     0 0 2px #fff,
-    0 0 16px #ffe06677;
+    0 0 8px #ffe06677;
   /* Taille de police uniforme pour tous les éléments principaux */
   font-size: 1.15rem;
   line-height: 1.4;

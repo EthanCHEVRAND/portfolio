@@ -11,5 +11,7 @@
 <style scoped>
 .card {
     border: solid 5px ;
+    width: 300px ;
+    height: 350px ;
 }
 </style> 
