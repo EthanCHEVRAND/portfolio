@@ -14,6 +14,7 @@ import TempNavBar from '@/components/TempNavBar.vue';
       <p class="arcade-focusable" tabindex="0">[arrows] : bouger le curseur</p>
       <p class="arcade-focusable" tabindex="0">[scroll] or [scroll-bar] : faire défiler</p>
       <p class="arcade-focusable" tabindex="0">[enter] : séléctionner</p>
+      <p class="arcade-focusable" tabindex="0">[souris] : comme sur n'importe quel site</p>
     </div>
   </main>
 </template>

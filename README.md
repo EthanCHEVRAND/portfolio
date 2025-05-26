@@ -27,3 +27,10 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## To implement
+
+- Profile picture
+- Projects pages
+- Skills view
+- ? a little game

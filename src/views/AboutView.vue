@@ -7,9 +7,16 @@ import TempNavBar from '@/components/TempNavBar.vue';
     <TempNavBar />
     <h1>A propos de moi</h1>
     <div class="identification">
-      <img src="#" alt="my photo" class="profile-picture">
-      <span>Ethan CHEVRAND, 17 ans</span>
-      <span>Niveau d'étude actuel : BUT Informatique, 1ere année</span>
+      <div class="left-side">
+        <img src="#" alt="my photo" class="profile-picture">
+        <span>Ethan CHEVRAND, 17 ans</span>
+        <span>Niveau d'étude actuel : BUT Informatique, 1ere année</span>
+      </div>
+      <div class="right-side">
+        <span>ethan.chevrand987@gmail.com</span>
+        <span><img src="#" alt="github logo"> EthanCHEVRAND</span>
+        <span><img src="#" alt="discord logo"> @zespatule</span>
+      </div>
     </div>
     <br>
     <div class="description">Passioné d'informatique et de jeux vidéos depuis l'enfance, j'ai créé mes premiers projets

@@ -1,5 +1,5 @@
 <template>
-  <nav class="main-navbar" tabindex="0">
+  <nav class="main-navbar">
     <ul>
       <li>
         <router-link class="link arcade-nav-focusable" tabindex="-1" to="/">Accueil</router-link>

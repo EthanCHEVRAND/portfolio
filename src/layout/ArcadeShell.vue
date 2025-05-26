@@ -3,8 +3,7 @@
     <!-- Écran de la borne -->
     <div class="arcade-shell">
       <div class="arcade-screen">
-        <canvas ref="snowCanvas" class="snow-canvas"></canvas>
-        <div class="scanline"></div>
+        <canvas v-if="!hideSnow" ref="snowCanvas" class="snow-canvas"></canvas>
         <router-view />
       </div>
     </div>
@@ -17,29 +16,41 @@
 </template>
 
 <script setup>
-import { onMounted, onBeforeUnmount, ref } from 'vue';
+import { onMounted, onBeforeUnmount, ref, computed, watch } from 'vue';
+import { useRoute } from 'vue-router';
 import ButtonPanel from '@/components/ButtonPanel.vue';
 import Stick from '@/components/Stick.vue';
 
+const route = useRoute();
 const snowCanvas = ref(null);
+let animationFrameId = null; // Pour pouvoir annuler l'animation
 
-onMounted(() => {
-  // Effet neige/grésillement rétro, plus visible
+// Vérifie si on est sur la page de détails
+const hideSnow = computed(() => {
+  // On ne veut PAS de neige sur la page de détails (project-details)
+  return route.name === 'project-details';
+});
+
+// Fonction pour initialiser l'effet de neige
+function initSnowEffect() {
   const canvas = snowCanvas.value;
+  if (!canvas || hideSnow.value) return;
+
   const ctx = canvas.getContext('2d');
   let width, height;
+
   function resize() {
     width = canvas.offsetWidth;
     height = canvas.offsetHeight;
     canvas.width = width;
     canvas.height = height;
   }
+
   resize();
   window.addEventListener('resize', resize);
 
   function drawSnow() {
     ctx.clearRect(0, 0, width, height);
-    // Augmente la densité et l'opacité pour plus de visibilité
     for (let i = 0; i < width * height * 0.018; i++) {
       const x = Math.random() * width;
       const y = Math.random() * height;
@@ -47,83 +58,43 @@ onMounted(() => {
       ctx.fillStyle = `rgba(${gray},${gray},${gray},${Math.random() * 0.35 + 0.18})`;
       ctx.fillRect(x, y, 1.2, 1.2);
     }
-    requestAnimationFrame(drawSnow);
+    animationFrameId = requestAnimationFrame(drawSnow);
   }
+  
+  // Démarrer l'animation
   drawSnow();
+}
 
-  function handleKey(e) {
-    const focusables = Array.from(document.querySelectorAll('.arcade-focusable'));
-    const current = document.activeElement;
-    let idx = focusables.indexOf(current);
+// Fonction pour arrêter l'effet de neige
+function stopSnowEffect() {
+  if (animationFrameId) {
+    cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+  }
+}
 
-    // Navigation verticale (haut/bas ou Z/S)
-    if (['ArrowDown', 's', 'S'].includes(e.key)) idx++;
-    if (['ArrowUp', 'z', 'Z'].includes(e.key)) idx--;
-    if (idx < 0) idx = focusables.length - 1;
-    if (idx >= focusables.length) idx = 0;
-
-    if (
-      ['ArrowDown', 'ArrowUp', 'z', 'Z', 's', 'S'].includes(e.key)
-      && focusables.length
-    ) {
-      e.preventDefault();
-      focusables[idx].focus();
-    }
-
-    // Entrée pour cliquer
-    if (e.key === 'Enter' && current.classList.contains('arcade-focusable')) {
-      current.click();
-    }
-
-    // Tab pour retourner à la barre de navigation
-    if (e.key === 'Tab') {
-      e.preventDefault();
-      const nav = document.querySelector('.main-navbar');
-      const firstLink = nav.querySelector('.arcade-nav-focusable');
-      if (firstLink) firstLink.focus();
+// Surveiller les changements de route
+watch(
+  () => route.name,
+  () => {
+    if (hideSnow.value) {
+      stopSnowEffect();
+    } else {
+      initSnowEffect();
     }
   }
+);
 
-  function handleNavKey(e) {
-    const navLinks = Array.from(document.querySelectorAll('.arcade-nav-focusable'));
-    const current = document.activeElement;
-    let idx = navLinks.indexOf(current);
+onMounted(() => {
+  initSnowEffect();
+});
 
-    if (['ArrowRight', 'd', 'D'].includes(e.key)) idx++;
-    if (['ArrowLeft', 'q', 'Q'].includes(e.key)) idx--;
-    if (idx < 0) idx = navLinks.length - 1;
-    if (idx >= navLinks.length) idx = 0;
-
-    if (
-      ['ArrowRight', 'ArrowLeft', 'd', 'D', 'q', 'Q'].includes(e.key)
-      && navLinks.length
-    ) {
-      e.preventDefault();
-      navLinks[idx].focus();
-    }
-
-    // Entrée pour cliquer sur le lien
-    if (e.key === 'Enter' && current.classList.contains('arcade-nav-focusable')) {
-      current.click();
-    }
-
-    // Tab pour retourner au contenu principal
-    if (e.key === 'Tab') {
-      e.preventDefault();
-      const main = document.getElementById('main-content');
-      if (main) main.focus();
-    }
-  }
-
-  // Ajoute le listener sur la navbar
-  const navbar = document.querySelector('.main-navbar');
-  if (navbar) navbar.addEventListener('keydown', handleNavKey);
-
-  window.addEventListener('keydown', handleKey);
-  onBeforeUnmount(() => {
-    if (navbar) navbar.removeEventListener('keydown', handleNavKey);
-    window.removeEventListener('keydown', handleKey);
-  });
+onBeforeUnmount(() => {
+  stopSnowEffect();
+  // Important : le listener doit être sur window, pas sur .main-navbar
+  window.removeEventListener('keydown', handleNavKey);
+  window.removeEventListener('keydown', handleKey);
+  window.removeEventListener('keydown', handleGlobalTab);
 });
 </script>
 
@@ -151,8 +122,30 @@ onMounted(() => {
     0 0 48px #ffe06655 inset,
     0 0 16px #ff6a00cc,
     0 0 10px #000a;
-  overflow: hidden;
-  padding: 10px ;
+  overflow-y: auto; /* Permet le scroll vertical */
+  overflow-x: hidden; /* Cache le scroll horizontal */
+  padding: 10px;
+  /* Stylise la barre de défilement */
+  scrollbar-width: thin;
+  scrollbar-color: #ff6a00 #2d004d;
+}
+
+/* Style de la barre de défilement pour Chrome/Safari/Edge */
+.arcade-screen::-webkit-scrollbar {
+  width: 8px;
+}
+
+.arcade-screen::-webkit-scrollbar-track {
+  background: #2d004d;
+}
+
+.arcade-screen::-webkit-scrollbar-thumb {
+  background: #ff6a00;
+  border-radius: 4px;
+}
+
+.arcade-screen::-webkit-scrollbar-thumb:hover {
+  background: #ff2d55;
 }
 
 .snow-canvas {
@@ -164,23 +157,6 @@ onMounted(() => {
   z-index: 3;
   mix-blend-mode: lighten;
   opacity: 0.32;
-}
-
-.scanline {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 28px;
-  left: -28px;
-  background: linear-gradient(90deg, transparent 0%, #ff6a00cc 50%, transparent 100%);
-  opacity: 0.18;
-  z-index: 4;
-  animation: scanline-move 30s linear infinite;
-}
-
-@keyframes scanline-move {
-  0% { left: -28px; }
-  100% { left: 100%; }
 }
 
 /* Texte rétro wave néon */
@@ -224,7 +200,7 @@ onMounted(() => {
 /* Pour les titres éventuels dans arcade-screen */
 .arcade-screen h1,
 .arcade-screen h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 0.5em;
   letter-spacing: 0.04em;
@@ -233,7 +209,7 @@ onMounted(() => {
 /* Pour les petits textes ou labels */
 .arcade-screen small,
 .arcade-buttons small {
-  font-size: 0.95rem;
+  font-size: 1.25rem;
   opacity: 0.85;
 }
 
