@@ -4,7 +4,7 @@
 body{
   padding: 0;
   margin: 0;
-  font-family: 'Press Start 2p', monospace ;
+  font-family: 'Share Tech Mono', 'VT323', 'Press Start 2P', monospace, sans-serif;
   background-color: #000;
   color: #00ffcc;
 }

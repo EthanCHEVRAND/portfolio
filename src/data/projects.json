@@ -1,7 +1,7 @@
 [
   {
     "id": "site-free",
-    "title": "Site vitrine de Free SAS",
+    "title": "Site vitrine de Free SAS *",
     "image": "free_accueil.png",
     "github": "https://github.com/EthanCHEVRAND/presentation-free",
     "content": [
@@ -13,28 +13,66 @@
       },
       {
         "type": "description",
-        "title": "Cadre du projet",
-        "desc": "Ce projet a été réalisé dans le cadre de ma première année en BUT Informatique. Il s'agit d'un site vitrine présentant l'entreprise Free SAS.",
+        "title": "Savoirs/savoire-faire mobilisés",
+        "desc": "Ce projet m'a principalement permis d'apprendre correctement les bases du HTML et du CSS. De plus, sur un aspect plus théorique, il m'a permis de comprendre l'importance d'un bon rapport entre l'esthétique et l'ergonomie.",
         "order": 2
       },
       {
-        "type": "image",
-        "url": "portfolio_capture.png",
-        "desc": "deuxieme description",
+        "type": "description",
+        "title": "Cadre du projet",
+        "desc": "Ce projet a été réalisé dans le cadre de ma première année en BUT Informatique. Il s'agit d'un site vitrine présentant l'entreprise Free SAS.",
         "order": 3
+      },
+      {
+        "type": "description",
+        "title": "Spécifications",
+        "desc": "Il nous a été demandé de réaliser un site faisant principalement l'analyse économique d'une entreprise de la tech française. Notre choix s'est porté vers Free SAS, entreprise française pionnière dans le domaine des télécommunications. Une analyse technique et écologique a été rajoutée afin d'étoffer le contenu du site. Notre site a dû être accompagné d'un rapport économique de l'entreprise.",
+        "order": 4
+      },
+      {
+        "type": "description",
+        "title": "Spécifications techniques",
+        "desc": "Le site a été réalisé en HTML et CSS. Il s'agit d'un site web statique, sans interactions particulière avec l'utilisateur et sans back-end.",
+        "order": 5
+      },
+      {
+        "type": "button",
+        "url": "https://ethanchevrand.github.io/presentation-free/",
+        "text": "voir le site",
+        "order": 5
       }
     ]
   },
   {
     "id": "crud-pompair",
-    "title": "CRUD Pompair",
+    "title": "CRUD Pompair *",
     "image": "pompair_crud.png",
     "github": ""
   },
   {
     "id": "portfolio",
-    "title": "Portfolio",
+    "title": "Portfolio *",
     "image": "portfolio_capture.png",
     "github": "https://github.com/EthanCHEVRAND/portfolio"
+  },
+  {
+    "id": "pauvocoder",
+    "title": "PauVocoder *",
+    "image": "pauvocoder.png",
+    "github": ""
+  },
+  {
+    "id": "cdf",
+    "title": "Chausson Della Famiglia *",
+    "image": "cdf.png",
+    "github": "https://github.com/EthanCHEVRAND/ecommerce_chaussons",
+    "content": [
+      {
+        "type": "button",
+        "url": "https://ethanchevrand.github.io/ecommerce_chaussons/",
+        "text": "voir le site",
+        "order": 1
+      }
+    ]
   }
 ]

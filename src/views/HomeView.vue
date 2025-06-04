@@ -5,17 +5,40 @@ import TempNavBar from '@/components/TempNavBar.vue';
 <template>
   <main>
     <TempNavBar />
-    <h1>Bienvenue sur le portfolio de Ethan CHEVRAND</h1>
+    <h1>Ethan CHEVRAND - Gamedev en devenir ?</h1>
+    <h2>Etudiant en BUT informatique, passioné par le jeu vidéo</h2>
     <br>
-    <!-- pour naviguer section : arrows to move, tab to return to nav bar, enter to select-->
-    <h3>Pour naviguer : </h3>
-    <div class="navigation-p" id="main-content" tabindex="-1">
-      <p class="arcade-focusable" tabindex="0">[tab] : retourner à la navigation</p>
-      <p class="arcade-focusable" tabindex="0">[arrows] : bouger le curseur</p>
-      <p class="arcade-focusable" tabindex="0">[scroll] or [scroll-bar] : faire défiler</p>
-      <p class="arcade-focusable" tabindex="0">[enter] : séléctionner</p>
-      <p class="arcade-focusable" tabindex="0">[souris] : comme sur n'importe quel site</p>
-    </div>
+    <p>(Les projets marqués avec une * sont ceux en lien avec les consignes spécifiques du portfolio, à savoir, prouver expolicitement l'aquisition de savoirs et savoir-faire en lien avec 2 de nos compétences)</p>
+    <h3>UE choisies : </h3>
+    <ul>
+      <li>UE 1 - Réaliser un développement d'application</li>
+      <li>UE 4 - Gérer des données de l'information</li>
+    </ul>
+    <h3>Quels sont les savoirs et savoir-faire requis ?</h3>
+    <ul>
+      <li>
+        <h4>UE 1</h4>
+        <ul>
+          <li>Avoir un pensée algorithmique</li>
+          <li>Comprendre les bases du développement orienté objet</li>
+          <li>Comprendre le langage Java</li>
+          <li>Connaître les bases du développemen web (HTML / CSS)</li>
+          <li>Connaître le paradigme MVC (Modèle / Vue / Controlleurs)</li>
+          <li>Savoir effectuer des tests unitaires</li>
+        </ul>
+      </li>
+
+      <li>
+        <h4>UE 4</h4>
+        <ul>
+          <li>Concevoir une base de donnée efficace (MCD)</li>
+          <li>Comprendre le SQL (MySQL/MariaDB dans notre cas)</li>
+          <li>Savoir créer une base donnée</li>
+          <li>Savoir exploiter une base de donnée</li>
+          <li>Savoir exploiter des données (stats)</li>
+        </ul>
+      </li>
+    </ul>
   </main>
 </template>
 
@@ -26,11 +49,17 @@ h1 {
   font-size: 1.5em ;
 }
 
-h3 {
-  margin-left: 20px;
+h2 {
+  text-align: center ;
+  font-size: 1.2em ;
 }
 
-.navigation-p {
-  margin-left: 80px ;
+h3 {
+  margin-left: 20px;
+  margin-bottom: 4px;
+}
+
+h4 {
+  margin-bottom: 4px ;
 }
 </style>
