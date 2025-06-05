@@ -1,6 +1,6 @@
 # portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+[website link](https://ethanchevrand.github.io/portfolio/)
 
 ## Recommended IDE Setup
 
