@@ -1,0 +1,61 @@
+[
+  {
+    "id": "java",
+    "name": "Java",
+    "icon": "java-icon.png",
+    "level": 5,
+    "description": "Développement d'applications",
+    "details": [
+      "Objet principal d'étude",
+      "Interfaces graphiques avec JavaFX",
+      "Programmation orientée objet",
+      "(Echelle de niveau)"
+    ]
+  },
+  {
+    "id": "mysql",
+    "name": "MySQL",
+    "icon": "mysql-icon.png",
+    "level": 4,
+    "description": "Gestion de base de donnée",
+    "details": [
+      "Création de base de donnée",
+      "Exploitation de base de donnée"
+    ]
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "icon": "python-icon.png",
+    "level": 2,
+    "description": "Analyse de données statistiques et mathématiques",
+    "details": [
+      "Analyse de suite et de fonctions",
+      "Analyses statistiques de données",
+      "Développement de scripts"
+    ]
+  },
+  {
+    "id": "htmlcss",
+    "name": "HTML/CSS",
+    "icon": "html_css-icon.png",
+    "level": 3,
+    "description": "Développement web",
+    "details": [
+      "Organisation de page web",
+      "Stylisation de page web"
+    ]
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "icon": "git-icon.png",
+    "level": 4,
+    "description": "Gestion de versions et collaboration",
+    "details": [
+      "Gestion des branches",
+      "Résolution de conflits",
+      "Travail en équipe"
+    ]
+  }
+]

@@ -1,45 +1,62 @@
 <!-- src/components/ButtonPanel.vue -->
 <template>
-  <div class="buttons">
-    <button class="arcade-button red"></button>
-    <button class="arcade-button blue"></button>
-    <button class="arcade-button green"></button>
+  <div class="button-layout">
+    <div class="button-row">
+      <button class="arcade-btn"></button>
+      <button class="arcade-btn"></button>
+      <button class="arcade-btn"></button>
+    </div>
+    <div class="button-row">
+      <button class="arcade-btn"></button>
+      <button class="arcade-btn"></button>
+      <button class="arcade-btn"></button>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.buttons {
+.button-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  /* Perspective horizontale */
+  perspective: 400px;
+}
+
+.button-row {
   display: flex;
   gap: 20px;
+  justify-content: center;
 }
 
-.arcade-button {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.arcade-btn {
+  width: 54px;
+  height: 38px;
+  border-radius: 50% / 40%;
   border: none;
-  box-shadow: 0 4px 0 #222;
+  background: radial-gradient(ellipse at 60% 30%, #ffe066 40%, #ff6a00 80%, #ff2d55 100%);
+  box-shadow: 
+    0 4px 16px #ff2d5555,
+    0 0 0 2px #ffe066,
+    0 0 0 5px #2d004d,
+    inset 0 2px 8px #fff8,
+    inset 0 -8px 16px #ff6a00cc;
   cursor: pointer;
-  transition: transform 0.1s, box-shadow 0.1s;
+  transform: rotateX(25deg);
+  transition: 
+    transform 0.1s,
+    box-shadow 0.1s;
+  position: relative;
 }
 
-.arcade-button:active {
-  transform: translateY(4px);
-  box-shadow: 0 0 0 #222;
-}
-
-.red {
-  background: #ff4444;
-  box-shadow: 0 4px 0 #990000;
-}
-
-.blue {
-  background: #4488ff;
-  box-shadow: 0 4px 0 #003399;
-}
-
-.green {
-  background: #44ff44;
-  box-shadow: 0 4px 0 #006600;
+.arcade-btn:active {
+  transform: rotateX(25deg) scale(0.95) translateY(2px);
+  box-shadow: 
+    0 2px 8px #ff2d55aa,
+    0 0 0 2px #ffe066,
+    0 0 0 5px #ff6a00,
+    inset 0 1px 4px #fff6,
+    inset 0 -6px 12px #ff6a00cc;
 }
 </style>

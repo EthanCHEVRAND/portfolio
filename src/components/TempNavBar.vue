@@ -19,6 +19,7 @@
 </template>
 
 <style scoped>
+
 ul {
     display: flex ;
     flex-direction: row;

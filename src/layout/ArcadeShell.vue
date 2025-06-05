@@ -1,6 +1,4 @@
-<!-- src/layout/ArcadeShell.vue -->
 <template>
-    <!-- Écran de la borne -->
     <div class="arcade-shell">
       <div class="arcade-screen">
         <canvas v-if="!hideSnow" ref="snowCanvas" class="snow-canvas"></canvas>
@@ -9,8 +7,8 @@
     </div>
     <div class="arcade-buttons-div">
       <div class="arcade-buttons">
-        <!--Stick class="arcade-stick"/-->
-        <!--ButtonPanel class="buttons"/-->
+        <Stick class="arcade-stick"/>
+        <ButtonPanel class="buttons"/>
       </div>
     </div>
 </template>
@@ -22,16 +20,16 @@ import ButtonPanel from '@/components/ButtonPanel.vue';
 import Stick from '@/components/Stick.vue';
 
 const route = useRoute();
-const snowCanvas = ref(null);
-let animationFrameId = null; // Pour pouvoir annuler l'animation
+// const snowCanvas = ref(null);
+// let animationFrameId = null; // Pour pouvoir annuler l'animation
 
 // Vérifie si on est sur la page de détails
-const hideSnow = computed(() => {
+/*const hideSnow = computed(() => {
   // On ne veut PAS de neige sur la page de détails (project-details)
   return route.name === 'project-details';
 });
 
-// Fonction pour initialiser l'effet de neige
+// Fonction pour initier l'effet de neige
 function initSnowEffect() {
   const canvas = snowCanvas.value;
   if (!canvas || hideSnow.value) return;
@@ -87,11 +85,10 @@ watch(
 
 onMounted(() => {
   initSnowEffect();
-});
+});*/
 
 onBeforeUnmount(() => {
-  stopSnowEffect();
-  // Important : le listener doit être sur window, pas sur .main-navbar
+  // stopSnowEffect();
   window.removeEventListener('keydown', handleNavKey);
   window.removeEventListener('keydown', handleKey);
   window.removeEventListener('keydown', handleGlobalTab);
@@ -99,14 +96,17 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
+template {
+  color: #1a0033;
+}
+
 
 .arcade-shell {
   width: 100%;
-  height: 75vh;
+  height: 71vh;
   display: flex;
   justify-content: center;
   padding-top: 5px;
-  /* Violet rétro wave avec effet néon */
   background: #1a0033;
 }
 
@@ -122,15 +122,13 @@ onBeforeUnmount(() => {
     0 0 48px #ffe06655 inset,
     0 0 16px #ff6a00cc,
     0 0 10px #000a;
-  overflow-y: auto; /* Permet le scroll vertical */
-  overflow-x: hidden; /* Cache le scroll horizontal */
+  overflow-y: auto;
+  overflow-x: hidden;
   padding: 10px;
-  /* Stylise la barre de défilement */
   scrollbar-width: thin;
   scrollbar-color: #ff6a00 #2d004d;
 }
 
-/* Style de la barre de défilement pour Chrome/Safari/Edge */
 .arcade-screen::-webkit-scrollbar {
   width: 8px;
 }
@@ -159,7 +157,6 @@ onBeforeUnmount(() => {
   opacity: 0.32;
 }
 
-/* Texte rétro wave néon */
 .arcade-screen,
 .arcade-buttons,
 .arcade-button {
@@ -170,12 +167,10 @@ onBeforeUnmount(() => {
     0 0 3px #ff6a00,
     0 0 2px #fff,
     0 0 8px #ffe06677;
-  /* Taille de police uniforme pour tous les éléments principaux */
   font-size: 1.15rem;
   line-height: 1.4;
 }
 
-/* Pour les boutons, un peu plus grand si besoin */
 .arcade-button {
   width: 44px;
   height: 44px;
@@ -197,7 +192,6 @@ onBeforeUnmount(() => {
   box-shadow: 0 1px 3px #000a, 0 0 0 2px #ff6a00;
 }
 
-/* Pour les titres éventuels dans arcade-screen */
 .arcade-screen h1,
 .arcade-screen h2 {
   font-size: 2.5rem;
@@ -206,7 +200,6 @@ onBeforeUnmount(() => {
   letter-spacing: 0.04em;
 }
 
-/* Pour les petits textes ou labels */
 .arcade-screen small,
 .arcade-buttons small {
   font-size: 1.25rem;
@@ -235,20 +228,40 @@ onBeforeUnmount(() => {
   background: #1a0033;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .arcade-buttons {
   display: flex;
-  gap: 36px;
-  background: linear-gradient(90deg, #2d004d 0%, #ff6a00 60%, #ff2d55 100%);
-  border-radius: 24px;
-  padding: 24px 48px;
+  gap: 60px;
+  background: linear-gradient(45deg, #2d004d 0%, #1a0033 100%);
+  border-radius: 30px;
+  padding: 30px 60px;
   box-shadow:
-    0 0 24px #ff2d55aa,
-    0 0 8px #ffe06688;
-  align-items: flex-end;
-  border: 2px solid #ffe066;
+    0 0 30px #ff2d55aa,
+    0 0 50px #ffe06644,
+    inset 0 0 20px #000;
+  align-items: center;
+  border: 3px solid #ff6a00;
+  position: relative;
+  width: 90%; /* Correspond à la largeur de l'écran */
+  max-width: calc(90% - 24px); /* Prend en compte la bordure de l'écran */
+  justify-content: space-around; /* Distribue l'espace entre les éléments */
+}
+
+.arcade-buttons::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255,224,102,0.1) 15%,
+    rgba(255,224,102,0.1) 85%,
+    transparent 100%
+  );
+  border-radius: 27px;
+  pointer-events: none;
 }
 
 .arcade-stick {
@@ -257,6 +270,9 @@ onBeforeUnmount(() => {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  /* Décalage visuel vers le haut sans agrandir la div parente */
+  margin-top: -30px;
+  margin-bottom: 0;
 }
 
 .buttons {

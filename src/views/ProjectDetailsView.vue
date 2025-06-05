@@ -143,7 +143,7 @@ const sortedContent = computed(() => {
 }
 
 .back-button {
-  margin: 2em 0;  /* Ajoute une marge verticale */
+  margin: 2em 0;
   padding: 0.8em 1.5em;
   background: #2d004d;
   color: #ffe066;

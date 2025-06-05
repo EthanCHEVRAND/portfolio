@@ -8,19 +8,16 @@ const selectedIndex = ref(projects.length + Math.floor(projects.length / 2));
 const carousel = ref(null);
 const viewport = ref(null);
 
-const CARD_WIDTH = 250 + 50; // largeur de carte + gap
+const CARD_WIDTH = 250 + 50;
 
-// Duplique les projets 3 fois pour avoir plus de marge
 const duplicatedProjects = [...projects, ...projects, ...projects];
 const totalLength = duplicatedProjects.length;
 
 const skipTransition = ref(false);
 
-// Ajoute une ref pour bloquer les clics pendant l'animation
 const isAnimating = ref(false);
 
 function prev() {
-  // Si une animation est en cours, on ignore le clic
   if (isAnimating.value) return;
   
   if (selectedIndex.value > 0) {
@@ -46,7 +43,6 @@ function prev() {
 }
 
 function next() {
-  // Si une animation est en cours, on ignore le clic
   if (isAnimating.value) return;
   
   if (selectedIndex.value < totalLength - 1) {
@@ -71,7 +67,6 @@ function next() {
   }
 }
 
-// Améliore les performances de l'animation CSS
 const carouselStyle = computed(() => {
   if (!viewport.value) return {};
   
@@ -81,32 +76,26 @@ const carouselStyle = computed(() => {
   const translateX = initialOffset + cardOffset;
   
   return {
-    transform: `translate3d(${translateX}px, 0, 0)`, // Utilise translate3d pour la performance GPU
+    transform: `translate3d(${translateX}px, 0, 0)`,
     transition: skipTransition.value ? 'none' : 'transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)',
-    'backface-visibility': 'hidden', // Optimisation GPU
+    'backface-visibility': 'hidden',
     'will-change': 'transform'
   };
 });
 
 function checkPosition() {
-  // Si on va trop loin vers la droite
   if (selectedIndex.value >= (2 * projects.length)) {
-    // On laisse l'animation se terminer
     setTimeout(() => {
       skipTransition.value = true;
-      // On revient au même projet mais dans l'instance précédente
       selectedIndex.value = selectedIndex.value - projects.length;
       setTimeout(() => {
         skipTransition.value = false;
       }, 50);
     }, 500);
   }
-  // Si on va trop loin vers la gauche
   if (selectedIndex.value < projects.length) {
-    // On laisse l'animation se terminer
     setTimeout(() => {
       skipTransition.value = true;
-      // On va au même projet mais dans l'instance suivante
       selectedIndex.value = selectedIndex.value + projects.length;
       setTimeout(() => {
         skipTransition.value = false;
@@ -122,7 +111,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', () => selectedIndex.value = selectedIndex.value);
 });
 
-// Surveille les changements d'index pour gérer la boucle
 watch(selectedIndex, () => {
   checkPosition();
 });

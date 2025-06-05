@@ -7,8 +7,6 @@ import TempNavBar from '@/components/TempNavBar.vue';
     <TempNavBar />
     <h1>Ethan CHEVRAND - Gamedev en devenir ?</h1>
     <h2>Etudiant en BUT informatique, passioné par le jeu vidéo</h2>
-    <br>
-    <p>(Les projets marqués avec une * sont ceux en lien avec les consignes spécifiques du portfolio, à savoir, prouver expolicitement l'aquisition de savoirs et savoir-faire en lien avec 2 de nos compétences)</p>
     <h3>UE choisies : </h3>
     <ul>
       <li>UE 1 - Réaliser un développement d'application</li>

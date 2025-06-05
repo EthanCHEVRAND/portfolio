@@ -15,4 +15,13 @@ body {
   background: radial-gradient(circle at center, #111, #000);
   color: #00ffcc;
 }
+
+body, html {
+  background: #1a0033 !important;
+}
+
+#app {
+  background: #1a0033;
+  min-height: 100vh;
+}
 </style>

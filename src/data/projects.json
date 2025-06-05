@@ -1,7 +1,7 @@
 [
   {
     "id": "site-free",
-    "title": "Site vitrine de Free SAS *",
+    "title": "Site vitrine de Free SAS",
     "image": "free_accueil.png",
     "github": "https://github.com/EthanCHEVRAND/presentation-free",
     "content": [
@@ -39,31 +39,81 @@
         "type": "button",
         "url": "https://ethanchevrand.github.io/presentation-free/",
         "text": "voir le site",
-        "order": 5
+        "order": 6
       }
     ]
   },
+
+
+
   {
     "id": "crud-pompair",
-    "title": "CRUD Pompair *",
+    "title": "CRUD Pompair",
     "image": "pompair_crud.png",
-    "github": ""
+    "github": "",
+    "content": [
+      {
+        "type": "image",
+        "url": "pompair_crud.png",
+        "desc": "Page Client du CRUD Pompair",
+        "order": 1
+      },
+      {
+        "type": "description",
+        "title": "Savoirs/savoire-faire mobilisés",
+        "desc": "Ce projet m'a permis de consolider mes connaissances en développement web, en utilisant un framework (bootstrap) pour m'assister. De plus, il m'a évidemment permis d'améliorer ma compréhension de la création et de la gestion d'une base de donnée.",
+        "order": 2
+      },
+      {
+        "type": "description",
+        "title": "Cadre du projet",
+        "desc": "Ce projet a été réalisé dans le cadre de ma première année en BUT Informatique. Il s'agit d'un CRUD, c'est à dire un outil qui permet de Créer / Voir (Read) / Mettre à jour (Update) / Supprimer (Delete) des données. ",
+        "order": 3
+      },
+      {
+        "type": "description",
+        "title": "Spécifications",
+        "desc": "Nous devions réaliser un CRUD pour la société fictive Pompair, spécialisée dans la vente et l'entretien de pompes à chaleur. Le CRUD devait permettre de gérer les clients, les pompes, les commandes, les interventions, les agents,... ",
+        "order": 4
+      },
+      {
+        "type": "description",
+        "title": "Spécifications techniques",
+        "desc": "Le CRUD a été réalisé en HTML, CSS (avec le framework Bootstrap), avec un back-end en python (framework flask) et une gestion de la base de donnée en MySQL/MariaDB. ",
+        "order": 5
+      },
+      {
+        "type": "description",
+        "title": "Mon rôle",
+        "desc": "La réalisation de la page de gestion des clients m'a été confiée. Les clients avaient la particularité de pouvoir parraîner d'autres clients, ce qui a rajouté de la complexité à la tâche. De plus, les clients étaient liés à beaucoup d'autres tables, ce qui a donné lieu à une suppression en cascade sur plusieurs niveaux.",
+        "order": 6
+      }
+    ]
   },
+
+
+
   {
     "id": "portfolio",
-    "title": "Portfolio *",
+    "title": "Portfolio",
     "image": "portfolio_capture.png",
     "github": "https://github.com/EthanCHEVRAND/portfolio"
   },
+
+
+
   {
     "id": "pauvocoder",
-    "title": "PauVocoder *",
+    "title": "PauVocoder",
     "image": "pauvocoder.png",
     "github": ""
   },
+
+
+
   {
     "id": "cdf",
-    "title": "Chausson Della Famiglia *",
+    "title": "Chausson Della Famiglia",
     "image": "cdf.png",
     "github": "https://github.com/EthanCHEVRAND/ecommerce_chaussons",
     "content": [

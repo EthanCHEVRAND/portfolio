@@ -8,14 +8,14 @@ import TempNavBar from '@/components/TempNavBar.vue';
     <h1>A propos de moi</h1>
     <div class="identification">
       <div class="left-side">
-        <img src="#" alt="my photo" class="profile-picture">
+        <!--<img src="#" alt="my photo" class="profile-picture">-->
         <span>Ethan CHEVRAND, 17 ans</span>
         <span>Niveau d'étude actuel : BUT Informatique, 1ere année</span>
       </div>
       <div class="right-side">
         <span>ethan.chevrand987@gmail.com</span>
-        <span><img src="#" alt="github logo"> EthanCHEVRAND</span>
-        <span><img src="#" alt="discord logo"> @zespatule</span>
+        <span><img src="../assets/images/icons/github-icon.png" alt="github logo" style="width: 32px; height: 32px;"> EthanCHEVRAND</span>
+        <span><img src="../assets/images/icons/discord-icon.png" alt="discord logo" style="width: 32px; height: 32px;"> @zespatule</span>
       </div>
     </div>
     <br>
@@ -33,21 +33,40 @@ import TempNavBar from '@/components/TempNavBar.vue';
 
 <style scoped>
 h1 {
-  margin-left: 10px; 
+  margin-left: 10px;
+  color: #ffe066;
+  text-shadow: 
+    0 0 4px #ff2d55,
+    0 0 8px #ff6a00;
 }
 
 .identification {
-  display: flex ;
+  display: flex;
+  flex-direction: row; /* Change to row to place left and right side next to each other */
+  justify-content: space-between; /* Spaces the left and right sides */
+  margin: 20px;
+  padding: 20px;
+}
+
+.left-side, .right-side {
+  display: flex;
   flex-direction: column;
-  margin-left: 20px; 
+  gap: 1em; /* Adds vertical spacing between elements */
+}
+
+.right-side span, .left-side span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #ffe066;
 }
 
 .description {
-  padding: 10px ;
-  margin-left: 20px ;
-  margin-right: 20px ;
+  padding: 20px;
+  margin: 20px;
   outline: 2px solid #ffba66;
   border-radius: 6px;
-  text-align: justify ;
+  text-align: justify;
+  color: #ffe066;
 }
 </style>
