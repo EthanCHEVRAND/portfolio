@@ -23,6 +23,7 @@ import TempNavBar from '@/components/TempNavBar.vue';
           <li>Connaître les bases du développemen web (HTML / CSS)</li>
           <li>Connaître le paradigme MVC (Modèle / Vue / Controlleurs)</li>
           <li>Savoir effectuer des tests unitaires</li>
+          <li>Savoir utiliser un/des IDE</li>
         </ul>
       </li>
 

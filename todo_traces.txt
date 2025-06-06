@@ -1,0 +1,11 @@
+CRUD S1 : 
+Delete en cascade
+- savoirs : 
+--- Gestion des contraintes relationnelles
+--- Organisation de page
+
+- savoir-faire : 
+--- Récupérer les différents éléments liés à notre élément (child)
+--- Faire une suppression en cascade sur deux niveaux (Client > pompe > commande/intervention)
+--- Construire une page web avec HTML
+--- Styliser la page avec du CSS, en se servant d'un framework (bootstrap)
