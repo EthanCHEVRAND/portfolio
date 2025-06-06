@@ -55,7 +55,7 @@
       {
         "type": "image",
         "url": "pompair_crud.png",
-        "desc": "Page Client du CRUD Pompair",
+        "desc": "Figure 1 - Page Client du CRUD Pompair",
         "order": 1
       },
       {
@@ -79,7 +79,7 @@
       {
         "type": "description",
         "title": "Spécifications techniques",
-        "desc": "Le CRUD a été réalisé en HTML, CSS (avec le framework Bootstrap), avec un back-end en python (framework flask) et une gestion de la base de donnée en MySQL/MariaDB. ",
+        "desc": "Le CRUD a été réalisé en HTML, CSS (avec le framework Bootstrap), avec un back-end en python (framework flask) et une gestion de la base de donnée en MySQL/MariaDB. Nous nous sommes servis de l'IDE jetbrains PyCharm Professionnal. ",
         "order": 5
       },
       {
@@ -87,6 +87,42 @@
         "title": "Mon rôle",
         "desc": "La réalisation de la page de gestion des clients m'a été confiée. Les clients avaient la particularité de pouvoir parraîner d'autres clients, ce qui a rajouté de la complexité à la tâche. De plus, les clients étaient liés à beaucoup d'autres tables, ce qui a donné lieu à une suppression en cascade sur plusieurs niveaux.",
         "order": 6
+      },
+      {
+        "type": "description",
+        "title": "Traces",
+        "desc": "",
+        "order": 7
+      },
+      {
+        "type": "image",
+        "url": "pompair_crud_suppression.png",
+        "desc": "Figure 2 - Page de suppression en cascade d'un client",
+        "order": 8
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "La figure 2 est une capture d'écran de la page du CRUD permettant de supprimer les éléments liés à un client en particulier. Il est nécessaire de faire cette page car on ne peut techniquement pas supprimer un client sans supprimer les éléments qui font apparaître l'identifiant du dit client, on appelle cela une contrainte relationnelle. La page affiche tous les éléments liés au client, triés par type, et propose de les supprimer. ",
+        "order": 9
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Pour créer cette page, il m'a fallu gérer d'un côté l'apparence, et de l'autre, le fonctionnement, c'est à dire afficher les bons éléments, faire en sorte que la suppression fonctionne, ... Pour l'apparence, j'ai créé différents tableau pour afficher les différents types d'éléments, ces tableaux s'affichent, même si ils sont vides. Ces tableaux ont été créés à l'aide du langage de balisage HTML, mais pour rajouter du \"style\" à ces tableaux, nous nous sommes servis de CSS avec le framework Bootstrap, qui contient tout un tas de styles prédéfinis, que nous avons ensuite personnalisés. ",
+        "order": 10
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Pour le fonctionnement en lui même de la page, j'ai dû utiliser de nombreuses jointures, qui permettent d'intégrer plusieurs tables dans une même requête SQL afin de récupérer les différents éléments, avant de les transférer à la page par le biais du back-end python et de la page HTML. ",
+        "order": 11
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "La suppression en cascade d'un client a quelques particularitées qui la rende assez complexe. D'abord, on a affaire à des suppressions en cascade à deux niveaux (Client > Pompe > Commande/Intervention). De plus, comme les clients peuvent se parrainer, il faut gérer la suppression d'un client pour en supprimer un autre (au moment de la réalisation de ce projet, je n'ai pas réussi à trouver de solution pour effectuer cela, j'ai d'onc simplement affiché un message demandant à l'utilisateur de d'abord supprimé les clients parrainés par celui que l'on veut supprimer). ",
+        "order": 12
       }
     ]
   },

@@ -7,5 +7,6 @@ Delete en cascade
 - savoir-faire : 
 --- Récupérer les différents éléments liés à notre élément (child)
 --- Faire une suppression en cascade sur deux niveaux (Client > pompe > commande/intervention)
+--- *Faire une suppression d'un client à partir d'un client était assez compliqué au moment de la réalisation du projet, compte tenu de mes compétences à ce moment là*
 --- Construire une page web avec HTML
 --- Styliser la page avec du CSS, en se servant d'un framework (bootstrap)

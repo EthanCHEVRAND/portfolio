@@ -94,7 +94,7 @@ const sortedContent = computed(() => {
 }
 
 .image-description {
-  margin-top: 1em;
+  margin-top: 0.5em;
   text-align: justify;
 }
 
@@ -165,7 +165,7 @@ const sortedContent = computed(() => {
 .mixed-content {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  /*gap: 2em;*/
   margin: 2em 0;
 }
 
