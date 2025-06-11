@@ -48,7 +48,7 @@
 
   {
     "id": "crud-pompair",
-    "title": "CRUD Pompair",
+    "title": "CRUD Pompair *",
     "image": "pompair_crud.png",
     "github": "",
     "content": [
@@ -127,22 +127,91 @@
     ]
   },
 
-
-
-  {
-    "id": "portfolio",
-    "title": "Portfolio",
-    "image": "portfolio_capture.png",
-    "github": "https://github.com/EthanCHEVRAND/portfolio"
-  },
-
-
-
   {
     "id": "pauvocoder",
-    "title": "PauVocoder",
+    "title": "PauVocoder *",
     "image": "pauvocoder.png",
-    "github": ""
+    "github": "",
+    "content": [
+      {
+        "type": "image",
+        "url": "pauvocoder.png",
+        "desc": "Figure 1 - Fonction d'affichage du spectre sonore",
+        "order": 1
+      },
+      {
+        "type": "description",
+        "title": "Savoirs/savoire-faire mobilisés",
+        "desc": "Ce projet m'a permis de grandement amélioré mes connaissances en Java. J'ai également découvert l'IDE IntelliJ IDEA durant ce projet. De plus, j'ai appris à utiliser la bibliothèque StdAudio, qui permet de manipuler le son en Java.",
+        "order": 2
+      },
+      {
+        "type": "description",
+        "title": "Cadre du projet",
+        "desc": "Ce projet a été réalisé dans le cadre de ma première année en BUT Informatique. Il s'agit d'un programme permettant de manipuler le pitch, c'est à dire la hauteur du son d'un fichier audio.",
+        "order": 3
+      },
+      {
+        "type": "description",
+        "title": "Spécifications",
+        "desc": "Nous devions réaliser un programme permettant de faire varier le pitch d'un fichier audio. Le programme devait utiliser trois algorithmes \"basiques\", afin d'obtenir trois niveaux de qualité différents. Le programme devait également permettre d'afficher le spectre sonore du fichier audio.",
+        "order": 4
+      },
+      {
+        "type": "description",
+        "title": "Spécifications techniques",
+        "desc": "Le programme a été réalisé en Java, avec l'IDE IntelliJ IDEA. Il utilise la bibliothèque StdAudio pour manipuler le son. Le programme est en ligne de commande, il n'y a pas d'interface graphique.",
+        "order": 5
+      },
+      {
+        "type": "description",
+        "title": "Traces",
+        "desc": "",
+        "order": 6
+      },
+      {
+        "type": "image",
+        "url": "pauvocoder_code_1.png",
+        "desc": "Figure 2 - Structure globale des méthodes",
+        "order": 7
+      },
+      {
+        "type": "image",
+        "url": "pauvocoder_code_2.png",
+        "desc": "Figure 3 - Exemple de méthode (version simple du vocoder)",
+        "order": 8
+      },
+      {
+        "type": "image",
+        "url": "pauvocoder_schema.png",
+        "desc": "Figure 4 - Schématisation de l'algorithme de la méthode vocodeSimple",
+        "order": 9
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Dans la Figure 2, on peut voir les signatures des différentes méthodes demandées dans le cadre du projet. La figure 3 montre le code de la méthode vocodeSimple, qui est la version la plus simple du vocoder. La figure 4 est un schéma de l'algorithme utilisé dans la méthode vocodeSimple.",
+        "order": 10
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Les figures 2, 3 et 4 permettent d'illustrer ma capacité à penser à un algorithme, l'écrire en java et à le documenter à partir d'une signature de méthode (qui était donnée) et d'une explication du principe de l'algorithme. Pour réaliser tout cela, j'ai également dû comprendre le fonctionnement de la bibliothèque StdAudio à partir de la documentation et des fichiers sources ; nous avions réalisé un tp avant ce projet afin de découvrir cette bibliothèque. Au moment de la réalisation du projet, ma compréhension du java était encore assez limitée, car je n'avais pas encore réalisé de projet concret en java, celui-ci était le premier. J'ai ensuite pû me servir de cette expérience pour me lancer dans d'autres projets en java et essayer d'approfondir mes connaissances, notamment en abordant la programmation orientée objet.",
+        "order": 11
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Les parties encadrées en orange et en rouge dans la figure 3 sont les parties du code permettant respectivement de préparer les différentes variables nécessaires puis de manipuler le tableau représentant le fichier audio, en suivant l'algorithme schématisé dans la figure 4. Il s'agit d'un algorithme relativement \"simple\", qui consiste à parcourir un tableau par morceau, puis de couper ou dupliquer ces morceaux de longueurs égales en appliquant un facteur de dilatation ou de contraction. ",
+        "order": 12
+      },
+      {
+        "type": "description",
+        "title": "",
+        "desc": "Les deux autres méthodes de vocoder, présente dans la figure 2, sont des versions plus complexes de ce même algorithme, afin d'améliorer la qualité du son en sortie. En effet, la méthode vocodeSimple renvoie un résultat de mauvaise qualité, avec de nombreux artefacts, car on diplique ou contracte des morceaux de manières brutes, sans tenir compte de la continuité du son. ",
+        "order": 13
+      }
+    ]
   },
 
 

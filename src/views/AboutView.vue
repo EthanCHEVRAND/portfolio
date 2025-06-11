@@ -14,7 +14,7 @@ import TempNavBar from '@/components/TempNavBar.vue';
       </div>
       <div class="right-side">
         <span>ethan.chevrand987@gmail.com</span>
-        <span><img src="../assets/images/icons/github-icon.png" alt="github logo" style="width: 32px; height: 32px;"> EthanCHEVRAND</span>
+        <a href="https://github.com/EthanCHEVRAND"><span><img src="../assets/images/icons/github-icon.png" alt="github logo" style="width: 32px; height: 32px;"> EthanCHEVRAND</span></a>
         <span><img src="../assets/images/icons/discord-icon.png" alt="discord logo" style="width: 32px; height: 32px;"> @zespatule</span>
       </div>
     </div>
@@ -38,6 +38,10 @@ h1 {
   text-shadow: 
     0 0 4px #ff2d55,
     0 0 8px #ff6a00;
+}
+
+a {
+  text-decoration: none;
 }
 
 .identification {

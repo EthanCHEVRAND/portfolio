@@ -12,6 +12,7 @@ import TempNavBar from '@/components/TempNavBar.vue';
       <li>UE 1 - Réaliser un développement d'application</li>
       <li>UE 4 - Gérer des données de l'information</li>
     </ul>
+    <span>(Les projets marqués d'une * sont les projets contenant des traces et des commentaires.)</span>
     <h3>Quels sont les savoirs et savoir-faire requis ?</h3>
     <ul>
       <li>
