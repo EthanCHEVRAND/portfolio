@@ -9,8 +9,8 @@ import TempNavBar from '@/components/TempNavBar.vue';
     <div class="identification">
       <div class="left-side">
         <!--<img src="#" alt="my photo" class="profile-picture">-->
-        <span>Ethan CHEVRAND, 17 ans</span>
-        <span>Niveau d'étude actuel : BUT Informatique, 1ere année</span>
+        <span>Ethan CHEVRAND, 18 ans</span>
+        <span>Niveau d'étude actuel : BUT Informatique, 2e année</span>
       </div>
       <div class="right-side">
         <span>ethan.chevrand987@gmail.com</span>
